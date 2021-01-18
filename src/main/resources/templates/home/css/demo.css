@@ -1,0 +1,116 @@
+
+.page {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.navbj {
+    width: 100%;
+    height: 45px;
+}
+
+.layui-btn-group {
+    margin: 3px;
+}
+
+.table-con {
+    width: 100%;
+    margin: 10px auto;
+}
+
+#pagenum {
+    width: 830px;
+}
+
+.layui-laypage {
+    text-align: center;
+}
+
+.layui-table {
+    margin: 0;
+}
+
+.layui-form-select {
+    float: left;
+}
+
+/*编辑弹窗*/
+.edit-tc {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+}
+
+.demo-edit {
+    width: 500px;
+    height: auto;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 16%;
+}
+
+.editit {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    background-color: #F8F8F8;
+    color: #333333;
+    text-align: center;
+    font-size: 14px;
+}
+
+.editcon {
+    width: 96%;
+    margin: 10px auto;
+}
+
+.tcclose {
+    font-size: 20px;
+    color: #2d2c3b;
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.tcbj {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/*form*/
+.formdiv {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.forlab {
+    width: 110px;
+    text-align: left;
+}
+
+.layui-upload-img {
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.layui-fluid {
+    padding: 0;
+}
+
+.onetable {
+    height: 207px;
+    overflow-y: scroll;
+}
+
+.layui-form-item {
+    margin-bottom: 10px;
+}

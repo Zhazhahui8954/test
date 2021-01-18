@@ -1,0 +1,190 @@
+/*公共默认样式*/
+
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+input, textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.layui-tab-content {
+    padding: 0;
+}
+
+.layui-tab-title {
+    overflow: hidden;
+}
+
+.layui-nav .layui-nav-item {
+    line-height: 79px;
+}
+
+.layui-header {
+    height: 80px;
+}
+
+.topli a {
+    color: #FFFFFF !important;
+}
+
+.topxl a {
+    color: #333333 !important;
+    cursor: pointer;
+}
+
+.layui-layout-left {
+    top: -1px;
+}
+
+.layui-layout-right {
+    top: -1px;
+}
+
+.demopage {
+    width: 98%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.layui-form-select {
+    float: left;
+}
+
+.layui-nav-child {
+    top: 85px;
+}
+
+.navbor {
+    width: 100%;
+    height: 47px;
+    border-bottom: 1px solid #009688;
+    margin: 0 auto;
+}
+
+.layui-btn-group {
+    margin: 3px;
+}
+
+.layui-fluid {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.layui-form-item {
+    margin-bottom: 0px;
+}
+
+.layui-card-header {
+    height: auto;
+    padding: 0;
+    line-height: normal;
+}
+
+.layui-nav-tree .layui-nav-child a {
+    padding-left: 50px;
+}
+
+.layui-layout-admin .layui-header {
+    background-color: #009688;
+    border: none;
+}
+
+.layui-form-label {
+    width: auto;
+    padding: 9px 5px;
+}
+
+.layui-icon-down {
+    top: 10px !important;
+}
+
+.layui-icon-up {
+    top: 10px !important;
+}
+
+.layui-form-item .layui-inline {
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+/*@media screen and(max-width:1360px) { 
+    .layui-header{width: 1360px !important; }
+    .layui-footer{width: 1360px !important; } 
+    .demopage{width: 1120px !important;}  
+    #LAY_app_body{width: 1120px !important;}  
+    #LAY_app{width: 1360px !important; } 
+    .layui-layout-admin {width: 1360px !important;}
+}*/
+/*index*/
+.topR {
+    margin-right: 20px;
+}
+
+.layui-layout-admin .layui-footer {
+    background-color: #DCDFE6;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0;
+}
+
+.footp {
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.layui-side-menu .layui-nav .layui-nav-item > a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+

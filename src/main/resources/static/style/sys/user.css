@@ -1,0 +1,70 @@
+/*用戶頁面==新增，编辑弹窗*/
+.add-tc {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+}
+
+.pwd-tc {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+}
+
+.edit-tc {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+}
+
+.demo-edit {
+    width: 500px;
+    height: auto;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 16%;
+}
+
+.editit {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    background-color: #F8F8F8;
+    color: #333333;
+    text-align: center;
+    font-size: 14px;
+}
+
+.editcon {
+    width: 96%;
+    margin: 10px auto;
+}
+
+.tcclose {
+    font-size: 20px;
+    color: #2d2c3b;
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.tcbj {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.layui-form-item {
+    margin-bottom: 10px;
+}
+
+.layui-table-click {
+    background-color: #CCCCCC !important;
+}

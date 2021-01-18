@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/library/layui/css/layui.css}"/>
+    <link rel="stylesheet" th:href="@{/style/common.css}"/>
+    <link rel="stylesheet" th:href="@{/style/sys/user.css}"/>
+</head>
+<body>
+<div class="demopage">
+    <div class="navbor">
+        <div class="navbj">
+            <div class="layui-btn-group">
+                <button class="layui-btn useradd"><i class="layui-icon">&#xe608;</i> 添加</button>
+                <button class="layui-btn usereditor" lay-event="getCheckData"><i class="layui-icon">&#xe642;</i> 编辑
+                </button>
+                <button class="layui-btn userResetPwd"><i class="layui-icon">&#xe673;</i> 重置密码</button>
+                <button class="layui-btn userdelete"><i class="layui-icon">&#xe640;</i> 删除</button>
+                <button class="layui-btn toEnable"><i class="layui-icon">&#xe6af;</i> 启用</button>
+                <button class="layui-btn disable"><i class="layui-icon">&#xe69c;</i> 禁用</button>
+            </div>
+        </div>
+    </div>
+    <div class="query">
+        <div class="layui-fluid">
+            <div class="layui-card">
+                <div class="layui-form layui-card-header static-card-header-auto">
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">用户名称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                       placeholder="请输入用户名称" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <button class="layui-btn layui-btn-normal">查询</button>
+                            <button class="layui-btn layui-btn-normal">清空</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/html" id="userBtn">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">身份</a>
+    </script>
+    <div class="ustable">
+        <table class="layui-hide" id="userTable" lay-filter="userTable"></table>
+    </div>
+</div>
+
+<!--添加用户-->
+<div class="add-tc">
+    <div class="tcbj"></div>
+    <div class="demo-edit">
+        <p class="editit">添加用户<i class="layui-icon-close layui-icon tcclose"></i></p>
+        <div class="editcon">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">登录名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="loginName" name="loginName" lay-verify="loginName" autocomplete="off"
+                               placeholder="请输入登录名称" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="userName" name="userName" lay-verify="userName" autocomplete="off"
+                               placeholder="请输入用户名称" class="layui-input">
+                    </div>
+                </div>
+                <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label">用户编码</label>-->
+                <!--<div class="layui-input-block">-->
+                <!--<input type="text"  id="" name="" lay-verify="" autocomplete="off" placeholder="请输入用户编码" class="layui-input">-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户Email</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="userEmail" name="userEmail" lay-verify="userEmail" autocomplete="off"
+                               placeholder="请输入Email" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系方式</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="phoneNumber" name="phoneNumber" lay-verify="phoneNumber"
+                               autocomplete="off" placeholder="请输入联系方式" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">描述</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="description" name="description" lay-verify="description"
+                               autocomplete="off" placeholder="请输入" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="UserAdd">确定</button>
+                        <button class="layui-btn layui-btn-primary">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--编辑用户-->
+<div class="edit-tc">
+    <div class="tcbj"></div>
+    <div class="demo-edit">
+        <p class="editit">编辑用户<i class="layui-icon-close layui-icon tcclose"></i></p>
+        <div class="editcon">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">登录名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value=""
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value=""
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户编码</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value=""
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户Email</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value=""
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系方式</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value=""
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">描述</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value=""
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="UserEditor">确定</button>
+                        <button class="layui-btn layui-btn-primary">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--重置密码-->
+<div class="pwd-tc">
+    <div class="tcbj"></div>
+    <div class="demo-edit">
+        <p class="editit">重置密码<i class="layui-icon-close layui-icon tcclose"></i></p>
+        <div class="editcon">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">重置密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" id="password" name="password" lay-verify="password" autocomplete="off"
+                               placeholder="请输入密码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="resetPwd">确定</button>
+                        <button class="layui-btn layui-btn-primary">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/library/layui/layui.all.js}"></script>
+<script type="text/javascript" th:src="@{/js/sys/user.js}"></script>
+
+</body>
+</html>

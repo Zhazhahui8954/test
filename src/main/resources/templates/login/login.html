@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <title></title>
+    <link rel="stylesheet" th:href="@{/library/layui/css/layui.css}"/>
+    <link rel="stylesheet" th:href="@{/style/common.css}"/>
+    <link rel="stylesheet" th:href="@{/login/css/login.css}"/>
+</head>
+
+<body>
+
+<div style="position: absolute; top: 0px; left: 0px; width: 60%;">
+  <!--  <img src="image/IMG_7114.JPG" style="width: 100%; height: 90%; position: relative; top: 50px;">-->
+</div>
+<div id="top" style="height: 50px; background-color: #3C3C3C; width: 100%;">
+    <div style="position: absolute; top: 5px; left: 0px; font-size: 30px; font-weight: 400; color: white; font-family: 'times new roman'">平台数据管理 &nbsp;<span style="font-size: 12px;">&copy;2021&nbsp;陕西集聚智慧</span></div>
+</div>
+<div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
+    <div class="loginbj">
+        <div class="layui-carousel" id="test-carousel-img2">
+            <div carousel-item="">
+                <div>
+
+                    <img th:src="@{/img/1.jpg}"/>
+                </div>
+                <div>
+                    <img th:src="@{/img/2.jpg}"/>
+                </div>
+                <div>
+                    <img th:src="@{/img/1.jpg}"/>
+                </div>
+                <div>
+                    <img th:src="@{/img/2.jpg}"/>
+                </div>
+            </div>
+        </div>
+        <div class="layadmin-user-login-main">
+            <div class="layadmin-user-login-box layadmin-user-login-header">
+                <h2>Logo</h2>
+                <p>平台数据管理</p>
+            </div>
+            <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-username"
+                           for="LAY-user-login-username"></label>
+                    <input type="text" name="username" id="LAY-user-login-username" lay-verify="required"
+                           placeholder="用户名" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layadmin-user-login-icon layui-icon layui-icon-password"
+                           for="LAY-user-login-password"></label>
+                    <input type="password" name="password" id="LAY-user-login-password" lay-verify="required"
+                           placeholder="密码" class="layui-input">
+                </div>
+
+                <!--<div class="layui-form-item" style="margin-bottom: 20px;">
+                    <input type="checkbox" id="tenDaysAutoLogin" name="remember" lay-skin="primary" title="十天内免登录">
+                </div>-->
+
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit"
+                            id="loginbtn">登 陆
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 下方区域 -->
+    <div th:replace="layout/footer :: Footer"></div>
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/library/layui/layui.all.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test-carousel-img2',
+            width: '100%',
+            height: '850px',
+            interval: 5000
+        });
+    });
+/*    $('#loginbtn').on('click', function () {
+        var bl = true;
+        var loginAct = $('#LAY-user-login-username').val();
+        var loginPwd = $('#LAY-user-login-password').val();
+
+        var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;
+        // var pPattern = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
+        if (loginAct == " " || loginPwd == " ") {
+            alert('用户名或密码不能为空！');
+        } else if (!(uPattern.test(loginAct)) && bl) {
+            alert('用户名需为4到16位（字母，数字，下划线）');
+            return false;
+        } // else if (!(pPattern.test(loginPwd)) && bl) {
+        //     alert('密码不能少于6位（字母和数字组合）');
+        //     return false;
+        // }
+        else {
+            $.ajax({
+                type: "post",
+                url: "loginUser",
+                data: {
+                    loginAct: $.trim(loginAct),
+                    loginPwd: $.trim(loginPwd),
+                    //vrifyCode: 8888,
+                   // hostIP: "",
+                   // hostName: "",
+                   // loginCity: ""
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data == "登录成功") {
+                        //window.location.href = "identity";
+                        window.location.href = "/";
+                    } else {
+                        layer.alert(data, {
+                            icon: 2,
+                            skin: 'layer-ext-moon',
+                            shadeClose: true,
+                            title: '提示'
+                        })
+                    }
+                }
+            })
+        }
+    })*/
+    
+
+    $(function () {
+        //用户文本框获得焦点
+        $("#LAY-user-login-username").focus();
+
+        //给整个windown绑定keydown时间
+        $(window).keydown(function(e) {
+          if (e.keyCode ==13){
+          login();
+          }
+        });
+        //给登录按钮绑定click事件
+        $("#loginbtn").click(function () {
+            login();
+            
+        })
+
+    })
+
+  function login(){
+
+      var bl = true;
+      var loginAct = $.trim($("#LAY-user-login-username").val());
+      var loginPwd = $.trim($("#LAY-user-login-password").val());
+      var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;
+      if (loginAct == " " || loginPwd == " ") {
+          alert('用户名或密码不能为空！');
+      } else if (!(uPattern.test(loginAct)) && bl) {
+          alert('用户名需为4到16位（字母，数字，下划线）');
+          return false;
+      };
+      $.ajax({
+                type: "post",
+                url: "loginUser",
+                data: {
+                    loginAct: $.trim(loginAct),
+                    loginPwd: $.trim(loginPwd),
+
+                },
+
+
+                success: function (data) {
+                    console.log(data);
+                    if (data == "/home/indexlogin") {
+
+                        window.location.href = "inde.html";
+                    } else {
+                        layer.alert(data, {
+                            icon: 2,
+                            skin: 'layer-ext-moon',
+                            shadeClose: true,
+                            title: '提示'
+                        })
+                    }
+                }
+            })
+    }
+
+</script>
+
+</body>
+
+</html>

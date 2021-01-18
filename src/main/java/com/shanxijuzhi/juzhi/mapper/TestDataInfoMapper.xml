@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shanxijuzhi.juzhi.mapper.TestDataInfoMapper">
+  <resultMap id="BaseResultMap" type="com.shanxijuzhi.juzhi.model.TestDataInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="no" jdbcType="VARCHAR" property="no" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="store_time" jdbcType="INTEGER" property="storeTime" />
+    <result column="check_data" jdbcType="VARCHAR" property="checkData" />
+    <result column="sample_type" jdbcType="VARCHAR" property="sampleType" />
+    <result column="check_date" jdbcType="CHAR" property="checkDate" />
+    <result column="check_name" jdbcType="VARCHAR" property="checkName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="jq_type" jdbcType="VARCHAR" property="jqType" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    id, no, source, store_time, check_data, sample_type, check_date, check_name, remark, 
+    jq_type
+  </sql>
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from test_data_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test_data_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insert" parameterType="com.shanxijuzhi.juzhi.model.TestDataInfo">
+    insert into test_data_info (id, no, source, 
+      store_time, check_data, sample_type, 
+      check_date, check_name, remark, 
+      jq_type)
+    values (#{id,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, 
+      #{storeTime,jdbcType=INTEGER}, #{checkData,jdbcType=VARCHAR}, #{sampleType,jdbcType=VARCHAR}, 
+      #{checkDate,jdbcType=CHAR}, #{checkName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{jqType,jdbcType=VARCHAR})
+  </insert>
+
+
+  <insert id="insertSelective" parameterType="com.shanxijuzhi.juzhi.model.TestDataInfo">
+    insert into test_data_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="no != null">
+        no,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="storeTime != null">
+        store_time,
+      </if>
+      <if test="checkData != null">
+        check_data,
+      </if>
+      <if test="sampleType != null">
+        sample_type,
+      </if>
+      <if test="checkDate != null">
+        check_date,
+      </if>
+      <if test="checkName != null">
+        check_name,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="jqType != null">
+        jq_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="no != null">
+        #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="storeTime != null">
+        #{storeTime,jdbcType=INTEGER},
+      </if>
+      <if test="checkData != null">
+        #{checkData,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleType != null">
+        #{sampleType,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null">
+        #{checkDate,jdbcType=CHAR},
+      </if>
+      <if test="checkName != null">
+        #{checkName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="jqType != null">
+        #{jqType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.shanxijuzhi.juzhi.model.TestDataInfo">
+    update test_data_info
+    <set>
+      <if test="no != null">
+        no = #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="storeTime != null">
+        store_time = #{storeTime,jdbcType=INTEGER},
+      </if>
+      <if test="checkData != null">
+        check_data = #{checkData,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleType != null">
+        sample_type = #{sampleType,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null">
+        check_date = #{checkDate,jdbcType=CHAR},
+      </if>
+      <if test="checkName != null">
+        check_name = #{checkName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="jqType != null">
+        jq_type = #{jqType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.shanxijuzhi.juzhi.model.TestDataInfo">
+    update test_data_info
+    set no = #{no,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      store_time = #{storeTime,jdbcType=INTEGER},
+      check_data = #{checkData,jdbcType=VARCHAR},
+      sample_type = #{sampleType,jdbcType=VARCHAR},
+      check_date = #{checkDate,jdbcType=CHAR},
+      check_name = #{checkName,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      jq_type = #{jqType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <insert id="save" parameterType="com.shanxijuzhi.juzhi.model.TestDataInfo">
+    insert into test_data_info (id, no, source,
+      store_time, check_data, sample_type,
+      check_date, check_name, remark,
+      jq_type)
+    values (#{id,jdbcType=INTEGER}, #{no,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR},
+      #{storeTime,jdbcType=INTEGER}, #{checkData,jdbcType=VARCHAR}, #{sampleType,jdbcType=VARCHAR},
+      #{checkDate,jdbcType=CHAR}, #{checkName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+      #{jqType,jdbcType=VARCHAR})
+  </insert>
+</mapper>
