@@ -16,9 +16,6 @@ import java.util.List;
 @EnableScheduling//开启定时任务的支持
 public class FileTask<T> {
 
-    @Autowired
-    private TestDataInfo testDataInfo;
-
     @Value("${file.url}")//获取文件的存储路径
     private String url;
 
@@ -54,11 +51,13 @@ public class FileTask<T> {
 
                     System.out.println(tt);
                 }*/
+
                 System.out.println("1111111111111111111");
                 System.out.println("1111111111111111111");
                 System.out.println("1111111111111111111");
                 System.out.println("1111111111111111111");
-                System.out.println("1111111111111111111");
+                System.out.println("新建dev分支");
+                System.out.println("我是分支输入的东西");
 
             }else if (!fs.isDirectory() && suffix.equals("xlsx")){
                 ImportExcel<TestDataInfo> importExcel = new ImportExcel<TestDataInfo>();
