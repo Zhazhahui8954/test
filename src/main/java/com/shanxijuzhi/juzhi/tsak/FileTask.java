@@ -52,9 +52,7 @@ public class FileTask<T> {
                     System.out.println(tt);
                 }*/
 
-                System.out.println("1111111111111111111");
-                System.out.println("1111111111111111111");
-                System.out.println("1111111111111111111");
+
                 System.out.println("1111111111111111111");
                 System.out.println("新建dev分支");
                 System.out.println("我是分支输入的东西");
