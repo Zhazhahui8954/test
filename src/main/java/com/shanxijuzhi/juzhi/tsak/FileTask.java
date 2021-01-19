@@ -16,9 +16,6 @@ import java.util.List;
 @EnableScheduling//开启定时任务的支持
 public class FileTask<T> {
 
-    @Autowired
-    private TestDataInfo testDataInfo;
-
     @Value("${file.url}")//获取文件的存储路径
     private String url;
 
