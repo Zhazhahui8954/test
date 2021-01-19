@@ -22,6 +22,7 @@ public class FileTask<T> {
     @Scheduled(cron="0/15 * * * * *")
     public List<TestDataInfo> scanFile() throws Exception {
 
+        System.out.println("我又是新增加的远程   master_dev分支");
         System.out.println("我是dev ------------- dev  dev     ");
         System.out.println("开始进入文件扫描的程序..................");
         String saveUrl = url;
