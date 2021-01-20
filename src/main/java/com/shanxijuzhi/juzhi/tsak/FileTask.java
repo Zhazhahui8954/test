@@ -21,6 +21,7 @@ public class FileTask<T> {
 
     @Scheduled(cron="0/15 * * * * *")
     public List<TestDataInfo> scanFile() throws Exception {
+        System.out.println("我把我的代码提交到本地分支以及远程分支。");
 
 
         System.out.println("woshi本地dev提交的数据");
