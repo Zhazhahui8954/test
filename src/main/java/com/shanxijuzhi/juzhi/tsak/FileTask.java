@@ -21,7 +21,9 @@ public class FileTask<T> {
 
     @Scheduled(cron="0/15 * * * * *")
     public List<TestDataInfo> scanFile() throws Exception {
+        System.out.println("我这个实在分支创建的");
         System.out.println("我把我的代码提交到本地分支以及远程分支。");
+
 
         System.out.println("我又是新增加的远程   master_dev分支");
 
@@ -32,6 +34,8 @@ public class FileTask<T> {
         System.out.println("我又是新增加的远程   master_dev分支");
         System.out.println("fffff    分支本地");
         System.out.println("我是dev ------------- dev  dev     ");
+
+
         System.out.println("开始进入文件扫描的程序..................");
         String saveUrl = url;
         System.out.println("存储文件的地址为"+ saveUrl);
@@ -74,6 +78,9 @@ public class FileTask<T> {
                     System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000"+tt);
 
                     System.out.println("我是dev  我提交的应该会到origin/dev  xxx");
+
+                    System.out.println("我是master    我是本地的master 我应该提交到远程的origin/master");
+
                 }
             }
 
