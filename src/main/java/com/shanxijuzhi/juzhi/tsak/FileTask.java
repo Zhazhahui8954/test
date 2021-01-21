@@ -77,7 +77,10 @@ public class FileTask<T> {
                 for (TestDataInfo tt:testDataInfos){
                     System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000"+tt);
 
+                    System.out.println("我是dev  我提交的应该会到origin/dev  xxx");
+
                     System.out.println("我是master    我是本地的master 我应该提交到远程的origin/master");
+
                 }
             }
 
