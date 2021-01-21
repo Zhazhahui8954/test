@@ -24,6 +24,7 @@ public class FileTask<T> {
         System.out.println("我这个实在分支创建的");
         System.out.println("我把我的代码提交到本地分支以及远程分支。");
 
+
         System.out.println("我又是新增加的远程   master_dev分支");
 
         System.out.println("woshi本地dev提交的数据");
@@ -76,6 +77,7 @@ public class FileTask<T> {
                 for (TestDataInfo tt:testDataInfos){
                     System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000"+tt);
 
+                    System.out.println("我是master    我是本地的master 我应该提交到远程的origin/master");
                 }
             }
 
